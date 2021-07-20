@@ -19,13 +19,13 @@ class Page
     private $defaults = [ // opts defauts, que é uma array. E dentro temos uma elemento, que também é array
         "data" => []
     ];
-    public function __construct($opts = array()) // as variáveis que vão vir da rota, vem no construct
+    public function __construct($opts = array(), $tpl_dir = "views/") // as variáveis que vão vir da rota, vem no construct
     {
         $this->options = array_merge($this->defaults, $opts); // ultimo sobrepoe o primeiro
 
         // config
         $config = array(
-            "tpl_dir"       => "views/", // caminho de onde a pasta de arquivos será criada
+            "tpl_dir"       => $tpl_dir, // caminho de onde a pasta de arquivos será criada
             "cache_dir"     => "views-cache/", // caminho de onde a pasta de cache será criada
             "debug"         => false // set to false to improve the speed
         );
