@@ -17,6 +17,8 @@ class Page
     private $tpl;
     private $options = []; // array que recebe o merge de $opts e defaults
     private $defaults = [ // opts defauts, que é uma array. E dentro temos uma elemento, que também é array
+        "header"=> true,
+        "footer"=>true,
         "data" => []
     ];
     public function __construct($opts = array(), $tpl_dir = "views/") // as variáveis que vão vir da rota, vem no construct
@@ -35,10 +37,14 @@ class Page
         //Atributo da classe, $tpl, recebe a instancia de Tpl
         $this->tpl = new Tpl;
 
+        
+
         $this->setData($this->options["data"]);
 
+        
+
         // draw, método que vai montar o template. Recebe o arquivo a ser exibido
-        $this->tpl->draw("header"); // arquivo exibido em todas as páginas. Criado dentro da pasta do template
+       if($this->options["header"] === true) $this->tpl->draw("header"); // arquivo exibido em todas as páginas. Criado dentro da pasta do template
     }
 
     /*
@@ -54,6 +60,8 @@ class Page
         }
     }
 
+
+
     // Método para o body
     public function setTpl($name, $data = array(), $returnHTML  = false)
     {
@@ -61,9 +69,8 @@ class Page
         $this->tpl->draw($name);
     }
 
-
     public function __destruct()
     {
-        $this->tpl->draw("footer"); // arquivo criado no fim da execução, exibido em todas as páginas. Criado dentro da pasta do template
+        if($this->options["footer"] === true) $this->tpl->draw("footer"); // arquivo criado no fim da execução, exibido em todas as páginas. Criado dentro da pasta do template
     }
 }
