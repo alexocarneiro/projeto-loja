@@ -8,6 +8,8 @@ use \Hcode\Mailer;
 
 class Product extends Model {
 
+	var $valProdInicial = 0;
+
 	public static function listAll()
 	{
 
@@ -48,6 +50,8 @@ class Product extends Model {
 			":desurl"=>$this->getdesurl()
 		));
 
+
+
 		$this->setData($results[0]);
 
 	}
@@ -60,6 +64,8 @@ class Product extends Model {
 		$results = $sql->select("SELECT * FROM tb_products WHERE idproduct = :idproduct", [
 			':idproduct'=>$idproduct
 		]);
+
+	
 
 		$this->setData($results[0]);
 
@@ -76,6 +82,7 @@ class Product extends Model {
 
 	}
 
+	// DIRECTORY_SEPARATOR para diretórios de pastas do servidor
 	public function checkPhoto()
 	{
 
@@ -111,6 +118,10 @@ class Product extends Model {
 
 	}
 
+	/**
+	 * Método para fazer o upload do arquivo de imagem
+	 * Verifica a extensão que foi enviada e converte para jpg
+	 */
 	public function setPhoto($file)
 	{
 
@@ -121,7 +132,7 @@ class Product extends Model {
 
 			case "jpg":
 			case "jpeg":
-			$image = imagecreatefromjpeg($file["tmp_name"]);
+			$image = imagecreatefromjpeg($file["tmp_name"]); //função do GD que recebe o arquivod e imagem para em seguida tratar
 			break;
 
 			case "gif":

@@ -24,7 +24,9 @@
                         </ul>                        
                     </div>
                 </div>
-                
+                <!-- o arquivo categories-menu é um arquivo estático, onde o CRUD de categorias acontece.
+                Então toda a operação em banco é feita nesse arquivo e depois ele é carregado aqui no site.
+                Isso otimiza as requisições que são feitas ao BD  -->
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categorias</h2>

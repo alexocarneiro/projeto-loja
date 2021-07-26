@@ -5,7 +5,7 @@ use \Hcode\Model\User;
 
 $app->get("/admin/users/:iduser/password", function($iduser){
 
-	User::verifyLogin();
+	//User::verifyLogin();
 
 	$user = new User();
 

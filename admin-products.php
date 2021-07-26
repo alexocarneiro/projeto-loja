@@ -50,7 +50,7 @@ $app->get("/admin/products", function(){
 
 $app->get("/admin/products/create", function(){
 
-	User::verifyLogin();
+	//User::verifyLogin();
 
 	$page = new PageAdmin();
 
@@ -60,11 +60,13 @@ $app->get("/admin/products/create", function(){
 
 $app->post("/admin/products/create", function(){
 
-	User::verifyLogin();
+	//User::verifyLogin();
 
 	$product = new Product();
 
 	$product->setData($_POST);
+
+	
 
 	$product->save();
 
@@ -75,7 +77,7 @@ $app->post("/admin/products/create", function(){
 
 $app->get("/admin/products/:idproduct", function($idproduct){
 
-	User::verifyLogin();
+	//User::verifyLogin();
 
 	$product = new Product();
 
@@ -91,7 +93,7 @@ $app->get("/admin/products/:idproduct", function($idproduct){
 
 $app->post("/admin/products/:idproduct", function($idproduct){
 
-	User::verifyLogin();
+	//User::verifyLogin();
 
 	$product = new Product();
 
@@ -110,7 +112,7 @@ $app->post("/admin/products/:idproduct", function($idproduct){
 
 $app->get("/admin/products/:idproduct/delete", function($idproduct){
 
-	User::verifyLogin();
+	//User::verifyLogin();
 
 	$product = new Product();
 

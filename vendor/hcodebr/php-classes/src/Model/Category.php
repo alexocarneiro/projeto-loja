@@ -59,6 +59,13 @@ class Category extends Model {
 
 	}
 
+	/**
+	 * Método updateFile = Atuaiza as categorias no site
+	 * Lista as categorias. Faz um foreach nas linhas da tabela das categorias.
+	 * Adiciona no array html o código em html concatenando com as informações necessárias do campo no BD
+	 * idcategory para a rota da categoria e descategory para saber a informação de qual categoria é
+	 */
+
 	public static function updateFile()
 	{
 
@@ -69,7 +76,7 @@ class Category extends Model {
 		foreach ($categories as $row) {
 			array_push($html, '<li><a href="/categories/'.$row['idcategory'].'">'.$row['descategory'].'</a></li>');
 		}
-
+		// Função para escrever no arquivo estático que será exibido no site.
 		file_put_contents($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "categories-menu.html", implode('', $html));
 
 	}
@@ -91,7 +98,7 @@ class Category extends Model {
 			", [
 				':idcategory'=>$this->getidcategory()
 			]);
-
+			
 		} else {
 
 			return $sql->select("
@@ -104,7 +111,7 @@ class Category extends Model {
 			", [
 				':idcategory'=>$this->getidcategory()
 			]);
-
+		
 		}
 
 	}
