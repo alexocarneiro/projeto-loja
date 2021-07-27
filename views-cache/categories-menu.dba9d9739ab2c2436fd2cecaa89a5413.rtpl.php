@@ -1,1 +1,1 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/categories/1">Situação de preço 1</a></li><li><a href="/categories/3">Situação de preço 2</a></li><li><a href="/categories/2">Situação de preço 3</a></li>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/categories/1">Valor adicional - 1 ao 5</a></li><li><a href="/categories/3">Valor Fixo</a></li><li><a href="/categories/2">Valor para unitário</a></li>

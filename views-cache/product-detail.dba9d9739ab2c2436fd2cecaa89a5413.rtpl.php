@@ -31,10 +31,20 @@
                         
                         <div class="col-sm-6">
                             <div class="product-inner">
-                                <h2 class="product-name"><?php echo htmlspecialchars( $product["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
+                                <h1 class="product-name"><?php echo htmlspecialchars( $product["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
+
+                                <div class="product-inner-maxilar">
+                                    <h2>Maxilar</h2>
+                                    <h3><ins><?php echo htmlspecialchars( $product["desmaxilar"], ENT_COMPAT, 'UTF-8', FALSE ); ?></ins></h3>
+                                </div>
+                                <div class="product-inner-mandibula">
+                                    <h2>Mandíbula</h2>
+                                    <h3><ins><?php echo htmlspecialchars( $product["desmandibula"], ENT_COMPAT, 'UTF-8', FALSE ); ?></ins></h3>
+                                </div>
                                 <div class="product-inner-price">
                                     <ins>R$<?php echo formatPrice($product["vlprice"]); ?></ins>
-                                </div>    
+                                </div>
+                                    
                                 
                                 <form action="/cart/<?php echo htmlspecialchars( $product["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add" class="cart">
                                     <div class="quantity">

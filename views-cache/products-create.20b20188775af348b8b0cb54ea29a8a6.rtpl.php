@@ -25,14 +25,28 @@
         <!-- form start -->
         <form role="form" action="/admin/products/create" method="post">
           <div class="box-body">
+            <div><h2>Informações do Produto</h2></div>
             <div class="form-group">
               <label for="desproduct">Nome da produto</label>
               <input type="text" class="form-control" id="desproduct" name="desproduct" placeholder="Digite o nome do produto">
             </div>
             <div class="form-group">
+              <label for="desmaxilar">Número dos dentes do Maxilar</label>
+              <input type="text" class="form-control" id="desmaxilar" name="desmaxilar">
+            </div>
+            <div class="form-group">
+              <label for="desmandibula">Número dos dentes da Mandíbula</label>
+              <input type="text" class="form-control" id="desmandibula" name="desmandibula">
+            </div>
+            <div class="form-group">
               <label for="vlprice">Preço</label>
               <input type="number" class="form-control" id="vlprice" name="vlprice" step="0.01" placeholder="0.00">
             </div>
+            <div class="form-group">
+              <label for="vlpricead">Preço de Peça Adicional</label>
+              <input type="number" class="form-control" id="vlpricead" name="vlpricead" step="0.01" placeholder="0.00">
+            </div>
+            <div><h2>Informações para Entrega</h2></div>
             <div class="form-group">
               <label for="vlwidth">Largura</label>
               <input type="number" class="form-control" id="vlwidth" name="vlwidth" step="0.01" placeholder="0.00">
@@ -49,10 +63,15 @@
               <label for="vlweight">Peso</label>
               <input type="number" class="form-control" id="vlweight" name="vlweight" step="0.01" placeholder="0.00">
             </div>
+            <div><h2>Informações para SEO</h2></div>
             <div class="form-group">
               <label for="desurl">URL</label>
               <input type="text" class="form-control" id="desurl" name="desurl">
             </div>
+            <div class="form-group">
+              <label for="desmeta">Meta Descrição</label>
+              <input type="text" class="form-control" id="desmeta" name="desmeta">
+            </div>      
           </div>
           <!-- /.box-body -->
           <div class="box-footer">

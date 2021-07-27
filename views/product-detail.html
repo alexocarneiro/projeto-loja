@@ -31,10 +31,20 @@
                         
                         <div class="col-sm-6">
                             <div class="product-inner">
-                                <h2 class="product-name">{$product.desproduct}</h2>
+                                <h1 class="product-name">{$product.desproduct}</h1>
+
+                                <div class="product-inner-maxilar">
+                                    <h2>Maxilar</h2>
+                                    <h3><ins>{$product.desmaxilar}</ins></h3>
+                                </div>
+                                <div class="product-inner-mandibula">
+                                    <h2>Mandíbula</h2>
+                                    <h3><ins>{$product.desmandibula}</ins></h3>
+                                </div>
                                 <div class="product-inner-price">
                                     <ins>R${function="formatPrice($product.vlprice)"}</ins>
-                                </div>    
+                                </div>
+                                    
                                 
                                 <form action="/cart/{$product.idproduct}/add" class="cart">
                                     <div class="quantity">
